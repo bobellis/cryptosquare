@@ -48,13 +48,25 @@ $(function() {
     $(this).text(encodeString(message));
   });
 
-  setInterval(function() {
-    var message = $("#message").val();
-    var current_message = $("span#entered-message").text();
-    if (current_message === message) {
-      $("span#entered-message").text(encodeString(message));
-    } else {
-      $("span#entered-message").text(message);
+  var id;
+
+  $("#toggle-interval").click(function() {
+    if (id) {
+      clearInterval(id);
+      id = false;
+      $(this).text("Scramble");
     }
-  }, 100);
+    else {
+      id = setInterval(function() {
+        var message = $("#message").val();
+        var current_message = $("span#entered-message").text();
+        if (current_message === message) {
+          $("span#entered-message").text(encodeString(message));
+        } else {
+          $("span#entered-message").text(message);
+        }
+      }, 100);
+    $(this).text("Unscramble");
+    }
+  });
 });
