@@ -22,13 +22,10 @@ var encodeString = function(message) {
   var number_of_columns = squareRootRoundUp(message.length);
   var rows = segmentString(message, number_of_columns);
   var encodedString = '';
-  var column = 0;
-  while (column < number_of_columns) {
-
+  for (var column = 0; column < number_of_columns; column += 1) {
     rows.forEach(function(row) {
       encodedString += row[column];
     });
-    column += 1;
   }
   return segmentString(encodedString, 5).join(" ")
 };
