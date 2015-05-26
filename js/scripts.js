@@ -24,7 +24,9 @@ var encodeString = function(message) {
   var encodedString = '';
   for (var column = 0; column < number_of_columns; column += 1) {
     rows.forEach(function(row) {
-      encodedString += row[column];
+      if (column < row.length){
+        encodedString += row[column];
+      }
     });
   }
   return segmentString(encodedString, 5).join(" ")

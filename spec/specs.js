@@ -37,4 +37,8 @@ describe('encodeString', function(){
   it('takes a string and encodes it using the square code method', function() {
     expect(encodeString('have a nice day, feed the dog & chill out')).to.equal('hifei acedl veeol eddgo aatcu nyhht');
   });
+
+  it('takes a string and encodes it using the square code method', function() {
+    expect(encodeString('have a nice day, feed the dog')).to.equal('hnado aiytg vcfhe eeead ed');
+  });
 });
