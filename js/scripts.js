@@ -1,12 +1,10 @@
 var segments = function(message, length){
-  // if (message.length <= length) {
-  //   return [message];
-  // };
-  var segments = [];
-  var i = 0;
-  while (i < message.length) {
-    segments.push(message.slice(i, i + length));
-    i += length;
+
+  var first_segment = message.slice(0, length);
+  if (!first_segment) {
+    return [];
+  } else if (first_segment.length < length) {
+    return [first_segment];
   }
-  return segments;
+  return [first_segment].concat(segments(message.slice(length), length));
 };

@@ -10,5 +10,5 @@ describe('segments', function() {
   it('has a shorter string in the last spot if the message isnt evenly divisible by the length', function(){
     expect(segments('thisisateststri', 4)).to.deep.equal(['this','isat','ests','tri']);
   });
-  
+
 });
