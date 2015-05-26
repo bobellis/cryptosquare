@@ -12,3 +12,17 @@ describe('segments', function() {
   });
 
 });
+
+describe('cleanString', function(){
+  it('removes all spaces', function(){
+    expect(cleanString('this is a string')).to.equal('thisisastring');
+  });
+
+  it('removes all punctuation and special characters', function(){
+    expect(cleanString('this!is $a.test,')).to.equal('thisisatest');
+  });
+
+  it('puts each letter in downcase', function(){
+    expect(cleanString('HeLlo WoRld')).to.equal('helloworld');
+  });
+});

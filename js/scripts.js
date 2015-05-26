@@ -8,3 +8,7 @@ var segments = function(message, length){
   }
   return [first_segment].concat(segments(message.slice(length), length));
 };
+
+var cleanString = function(message){
+  return message.replace(/[ !,.?'"/(){}$%&:;<>]/g,'').toLowerCase();
+}
