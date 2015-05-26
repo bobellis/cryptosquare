@@ -31,3 +31,14 @@ var encodeString = function(message) {
   }
   return segmentString(encodedString, 5).join(" ")
 };
+
+$(function() {
+  $("form#string-to-encode").submit(function(event) {
+    var message = $("#message").val();
+    $("#returned-message").text(encodeString(message));
+    $("#encoded-message").hide();
+    $("#encoded-message").fadeIn(10000);
+
+    event.preventDefault();
+  });
+});

@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title> Square Code Encoder</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/scripts.js"></script>
   </head>
   <body>
+    <div class="container">
+    <h1> Square Code Encoder </h1>
+    <form id='string-to-encode'>
+      <div class="form-group">
+        <label for="message">Enter a message to encode!</label>
+        <input id="message" type="text">
+      </div>
+      <button type="submit" class="btn btn-success">Encode!</button>
+    </form>
+
+    <div id="encoded-message">
+      <h1> Here's your encoded message: <span class="text-success" id="returned-message"> </span> </h1>
+    </div>
+  </div>
   </body>
 </html>
